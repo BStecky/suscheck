@@ -1,0 +1,66 @@
+{
+  "message": {
+    "header": {
+      "numReadonlySignedAccounts": 0,
+      "numReadonlyUnsignedAccounts": 7,
+      "numRequiredSignatures": 1
+    },
+    "staticAccountKeys": [
+      "Ewr4Mojpn3D4X1wQvAfwUaMfAFPD3nCRg7X9XvfSCmNt",
+      "BXV3QdjUFs6zZFacZd12hTUEhX9vcXAJShthEmBqhQ3p",
+      "9Cm9Aata79TVozjseGSJABEDimGLPFc8pTbmAuE4J54D",
+      "E7txdMh9WvtVXm3cYe5swCFgLzL8EsNBXDCATFWxZ8r2",
+      "73oajXydFNKwwx1P2NTJC88fYjq7e2KQugbGJMVgJfhX",
+      "Eq5kRoWYG4UA9uGTsypvr2hHr2nTVjUaGXXGbH3Rhpk4",
+      "HUmi2zYyUfiznZepZcbBSBuTVtPRyJTeqd2BzEp5MK2F",
+      "Exorh4YwBDS9apt9EQQVRJ4LZXPXDVAuA18Y9zvuN7NE",
+      "Ei681AuJVYC1h3wC4sjV1dW9uVemhRWBktT9Myu3tWDp",
+      "8jfAMZPMeFx4VVmyh92Dje9X7VSm59MmmSdJjs39fCFW",
+      "ASudXHtjeYnU38T25GNkzjqErN2ytsGVcRMwzx9mwwMo",
+      "8zDCg6EacqG7LF9pvtxBuDnXCjLB3JyoT1rQ7UGW8Kzw",
+      "AxAZrtQUsJmzm7Jon6bx77P8ADf6Bc8WSaFub3qovYR1",
+      "Gcst97VhqEmFznVdo5BsKUwxDVqLt1RZc1k7eaqkGBZw",
+      "ComputeBudget111111111111111111111111111111",
+      "Dg5x6gPXMezwdkUPMEb7FxCqFJXhJVQadUor393aZT7s",
+      "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8",
+      "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+      "5Q544fKrFoe6tsEbD7S8EmxGTJYAKtTVhAW5Q5pge4j1",
+      "srmqPvymJeFKQ4zGQed1GFppgkRHL9kaELCbyksJtPX",
+      "F6We63Mt1fb1N6qRCeKMyaXAWi32KD2qjSZFsM6Uivzw"
+    ],
+    "recentBlockhash": "F7hzqT8ao8sqsTTrY8HcgDL6YWT6utJfDGnVJfgPcbAf",
+    "compiledInstructions": [
+      {
+        "programIdIndex": 14,
+        "accountKeyIndexes": [],
+        "data": { "type": "Buffer", "data": [2, 7, 225, 0, 0] }
+      },
+      {
+        "programIdIndex": 14,
+        "accountKeyIndexes": [],
+        "data": { "type": "Buffer", "data": [3, 156, 144, 1, 0, 0, 0, 0, 0] }
+      },
+      {
+        "programIdIndex": 15,
+        "accountKeyIndexes": [
+          1, 2, 0, 3, 16, 17, 4, 18, 5, 6, 7, 19, 8, 9, 10, 11, 12, 13, 20
+        ],
+        "data": {
+          "type": "Buffer",
+          "data": [
+            1, 9, 0, 0, 0, 0, 0, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 249, 2, 149,
+            0, 0, 0, 0, 0, 123, 163, 84, 0, 0, 0, 0, 128, 228, 10, 84, 0, 0, 0,
+            0, 64, 153, 190, 83, 0, 0, 0, 0, 0, 78, 114, 83, 0, 0, 0, 0, 166, 4,
+            0, 0, 0, 0, 0, 0, 0, 16, 39, 0, 0, 0, 0, 0, 0, 208, 7, 0, 0, 0, 0,
+            0, 0, 142, 39, 65, 102, 0, 0, 0, 0, 236, 95, 61, 111, 169, 160, 17,
+            0
+          ]
+        }
+      }
+    ],
+    "addressTableLookups": []
+  },
+  "signatures": [
+    "42kLLGDeqBvmkLumPPh35Arss8iVbQBkyozJCBVSDABxWXeLCYMbqQ867aaEkJpvFhaMvABVNWxde1xYNkydpem1"
+  ]
+}

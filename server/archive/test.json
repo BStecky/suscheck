@@ -1,0 +1,129 @@
+{
+  "computeUnitsConsumed": 5406,
+  "err": null,
+  "fee": 10904,
+  "innerInstructions": [],
+  "loadedAddresses": { "readonly": [], "writable": [] },
+  "logMessages": [
+    "Program ComputeBudget111111111111111111111111111111 invoke [1]",
+    "Program ComputeBudget111111111111111111111111111111 success",
+    "Program ComputeBudget111111111111111111111111111111 invoke [1]",
+    "Program ComputeBudget111111111111111111111111111111 success",
+    "Program Dg5x6gPXMezwdkUPMEb7FxCqFJXhJVQadUor393aZT7s invoke [1]",
+    "Program log: E: 1",
+    "Program Dg5x6gPXMezwdkUPMEb7FxCqFJXhJVQadUor393aZT7s consumed 5106 of 57307 compute units",
+    "Program Dg5x6gPXMezwdkUPMEb7FxCqFJXhJVQadUor393aZT7s success"
+  ],
+  "postBalances": [
+    24500055725, 2039280, 17377729854, 1183200, 0, 0, 0, 0, 3591360, 457104960,
+    457104960, 1825496640, 2039280, 2039280, 1, 1141440, 1141440, 934087680,
+    3104864002, 1141440, 0
+  ],
+  "postTokenBalances": [
+    {
+      "accountIndex": 1,
+      "mint": "BVGqFZ4aArspa5gbStF1ZCLfKbz1MW8g6pCUHXbXU7Ev",
+      "owner": "Ewr4Mojpn3D4X1wQvAfwUaMfAFPD3nCRg7X9XvfSCmNt",
+      "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+      "uiTokenAmount": {
+        "amount": "0",
+        "decimals": 9,
+        "uiAmount": null,
+        "uiAmountString": "0"
+      }
+    },
+    {
+      "accountIndex": 2,
+      "mint": "So11111111111111111111111111111111111111112",
+      "owner": "Ewr4Mojpn3D4X1wQvAfwUaMfAFPD3nCRg7X9XvfSCmNt",
+      "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+      "uiTokenAmount": {
+        "amount": "17375690574",
+        "decimals": 9,
+        "uiAmount": 17.375690574,
+        "uiAmountString": "17.375690574"
+      }
+    },
+    {
+      "accountIndex": 12,
+      "mint": "BVGqFZ4aArspa5gbStF1ZCLfKbz1MW8g6pCUHXbXU7Ev",
+      "owner": "F6We63Mt1fb1N6qRCeKMyaXAWi32KD2qjSZFsM6Uivzw",
+      "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+      "uiTokenAmount": {
+        "amount": "0",
+        "decimals": 9,
+        "uiAmount": null,
+        "uiAmountString": "0"
+      }
+    },
+    {
+      "accountIndex": 13,
+      "mint": "So11111111111111111111111111111111111111112",
+      "owner": "F6We63Mt1fb1N6qRCeKMyaXAWi32KD2qjSZFsM6Uivzw",
+      "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+      "uiTokenAmount": {
+        "amount": "0",
+        "decimals": 9,
+        "uiAmount": null,
+        "uiAmountString": "0"
+      }
+    }
+  ],
+  "preBalances": [
+    24500066629, 2039280, 17377729854, 1183200, 0, 0, 0, 0, 3591360, 457104960,
+    457104960, 1825496640, 2039280, 2039280, 1, 1141440, 1141440, 934087680,
+    3104864002, 1141440, 0
+  ],
+  "preTokenBalances": [
+    {
+      "accountIndex": 1,
+      "mint": "BVGqFZ4aArspa5gbStF1ZCLfKbz1MW8g6pCUHXbXU7Ev",
+      "owner": "Ewr4Mojpn3D4X1wQvAfwUaMfAFPD3nCRg7X9XvfSCmNt",
+      "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+      "uiTokenAmount": {
+        "amount": "0",
+        "decimals": 9,
+        "uiAmount": null,
+        "uiAmountString": "0"
+      }
+    },
+    {
+      "accountIndex": 2,
+      "mint": "So11111111111111111111111111111111111111112",
+      "owner": "Ewr4Mojpn3D4X1wQvAfwUaMfAFPD3nCRg7X9XvfSCmNt",
+      "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+      "uiTokenAmount": {
+        "amount": "17375690574",
+        "decimals": 9,
+        "uiAmount": 17.375690574,
+        "uiAmountString": "17.375690574"
+      }
+    },
+    {
+      "accountIndex": 12,
+      "mint": "BVGqFZ4aArspa5gbStF1ZCLfKbz1MW8g6pCUHXbXU7Ev",
+      "owner": "F6We63Mt1fb1N6qRCeKMyaXAWi32KD2qjSZFsM6Uivzw",
+      "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+      "uiTokenAmount": {
+        "amount": "0",
+        "decimals": 9,
+        "uiAmount": null,
+        "uiAmountString": "0"
+      }
+    },
+    {
+      "accountIndex": 13,
+      "mint": "So11111111111111111111111111111111111111112",
+      "owner": "F6We63Mt1fb1N6qRCeKMyaXAWi32KD2qjSZFsM6Uivzw",
+      "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+      "uiTokenAmount": {
+        "amount": "0",
+        "decimals": 9,
+        "uiAmount": null,
+        "uiAmountString": "0"
+      }
+    }
+  ],
+  "rewards": null,
+  "status": { "Ok": null }
+}
