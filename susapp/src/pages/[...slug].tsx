@@ -12,7 +12,11 @@ const SlugPage: React.FC = () => {
 
   useEffect(() => {
     const fetchTokenData = async () => {
-      if (!tokenAddress || tokenAddress.length !== 44) {
+      if (
+        !tokenAddress ||
+        tokenAddress.length < 40 ||
+        tokenAddress.length > 50
+      ) {
         setTokenData(null);
         return;
       }

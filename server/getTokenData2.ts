@@ -3,7 +3,9 @@ import { Connection, PublicKey } from "@solana/web3.js";
 import BN from "bn.js";
 
 export async function getTokenMetadata(tokenAddress: string) {
-  const connection = new Connection(process.env.QUICKNODE_RPC_URL);
+  const connection = new Connection(
+    process.env.QUICKNODE_RPC_URL || "https://api.mainnet-beta.solana.com"
+  );
   const metaplex = Metaplex.make(connection);
   const mintAddress = new PublicKey(tokenAddress);
 
@@ -24,14 +26,14 @@ export async function getTokenMetadata(tokenAddress: string) {
 
   if (metadataAccountInfo) {
     const token = await metaplex.nfts().findByMint({ mintAddress });
-    tokenName = token.name;
-    tokenSymbol = token.symbol;
-    tokenLogo = token.json?.image;
-    tokenSupply = new BN(token.mint.supply.basisPoints).toString();
+    tokenName = token.name || "";
+    tokenSymbol = token.symbol || "";
+    tokenLogo = token.json?.image || "";
+    tokenSupply = new BN(token.mint.supply.basisPoints).toString() || "0";
     mintAuthorityAddress = token.mint.mintAuthorityAddress?.toString() || "";
     freezeAuthorityAddress =
       token.mint.freezeAuthorityAddress?.toString() || "";
-    decimals = token.mint.decimals;
+    decimals = token.mint.decimals || 0;
     description = token.json?.description || "";
   }
 

@@ -243,8 +243,12 @@ const TokenPage: React.FC<TokenPageProps> = ({ tokenData }) => {
 
   if (!tokenData) {
     return (
-      <div className="text-gray-200 text-center m-8">
-        Token Not Found or invalid token address.
+      <div className="bg-gray-800 text-gray-200 text-center w-full min-h-screen flex flex-col items-center justify-center">
+        Token Not Found or Invalid Token Address.
+        <div>
+          Suscheck only archives tokens launched after June 1st, 2024 on
+          Raydium.
+        </div>
       </div>
     );
   }
