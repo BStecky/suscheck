@@ -14,13 +14,13 @@ import {
 import useStore from "../store/store";
 
 const useTokenFetch = () => {
-  const { tokens, addTokens } = useStore();
+  const { tokens, addTokens, setLoading, isLoading, isSearching } = useStore();
   const [lastVisible, setLastVisible] =
     useState<QueryDocumentSnapshot<DocumentData> | null>(null);
-  const [loading, setLoading] = useState(false);
   const loader = useRef<HTMLDivElement | null>(null);
 
   const fetchTokens = useCallback(async () => {
+    if (isLoading || isSearching) return; // Check if searching
     console.log("Fetching tokens...");
     setLoading(true);
 
@@ -39,8 +39,16 @@ const useTokenFetch = () => {
     console.log("Fetched documents:", documentSnapshots.docs);
     const newTokens = documentSnapshots.docs.map((doc) => ({
       id: doc.id,
-      tokenAddress: doc.data().tokenAddress,
-      sus: doc.data().sus,
+      tokenAddress: doc.data().tokenAddress || "N/A",
+      sus: doc.data().sus || false,
+      tokenName: doc.data().tokenName || "N/A",
+      tokenSymbol: doc.data().tokenSymbol || "N/A",
+      tokenImage: doc.data().tokenImage || "N/A",
+      tokenSupply: doc.data().tokenSupply || 0,
+      freezeAuthorityAddress: doc.data().freezeAuthorityAddress || "N/A",
+      mintAuthorityAddress: doc.data().mintAuthorityAddress || "N/A",
+      decimals: doc.data().decimals || 0,
+      description: doc.data().description || "No description available",
     }));
     console.log("New tokens:", newTokens);
     addTokens(newTokens);
@@ -48,14 +56,15 @@ const useTokenFetch = () => {
       documentSnapshots.docs[documentSnapshots.docs.length - 1] || null
     );
     setLoading(false);
-  }, [lastVisible, addTokens]);
+  }, [lastVisible, addTokens, setLoading, isLoading, isSearching]);
 
   useEffect(() => {
     const currentLoader = loader.current;
     const observer = new IntersectionObserver(
       (entries) => {
         console.log("Intersection observed:", entries[0].isIntersecting);
-        if (entries[0].isIntersecting) {
+        if (entries[0].isIntersecting && !isSearching) {
+          // Check if not searching
           fetchTokens();
         }
       },
@@ -71,9 +80,9 @@ const useTokenFetch = () => {
         observer.unobserve(currentLoader);
       }
     };
-  }, [fetchTokens]);
+  }, [fetchTokens, isSearching]); // Add isSearching as a dependency
 
-  return { tokens, loading, loader };
+  return { tokens, loading: isLoading, loader };
 };
 
 export default useTokenFetch;

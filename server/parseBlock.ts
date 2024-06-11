@@ -43,8 +43,7 @@ export async function parseBlock(block: number, raydiumPoolID: string) {
               !tx.meta?.err &&
               hasInnerInstructions
             ) {
-              console.log("FOUND RAYDIUM POOL ID IN TX");
-              console.log("the transaction: ", tx);
+              // console.log("the transaction: ", tx);
               resultObject.transactionArray.push(tx);
               resultObject.transactionSignatures.push(
                 tx.transaction.signatures[0]
@@ -54,7 +53,7 @@ export async function parseBlock(block: number, raydiumPoolID: string) {
           }
         }
       }
-      return resultObject; // Return the result if successful
+      return resultObject;
     } catch (error) {
       console.error("Error fetching block:", error);
       console.log(`Retrying to fetch block for slot ${block}...`);

@@ -4,12 +4,17 @@ import { db } from "../database/firebaseConfig";
 import useStore from "../store/store";
 
 const SearchBar: React.FC = () => {
-  const { setSearchResults } = useStore();
+  const {
+    setSearchResults,
+    setLoading,
+    isLoading,
+    setIsSearching,
+    isSearching,
+  } = useStore();
   const [searchQuery, setSearchQuery] = useState("");
-  const [loading, setLoading] = useState(false);
 
   const searchTokens = useCallback(async () => {
-    if (searchQuery.trim() === "") return;
+    if (searchQuery.trim() === "" || isLoading) return;
 
     console.log("Searching tokens...");
     setLoading(true);
@@ -27,8 +32,15 @@ const SearchBar: React.FC = () => {
       sus: doc.data().sus,
     }));
     setSearchResults(foundTokens);
+    setIsSearching(true);
     setLoading(false);
-  }, [searchQuery, setSearchResults]);
+  }, [searchQuery, setSearchResults, setLoading, isLoading, setIsSearching]);
+
+  const clearSearch = () => {
+    setSearchQuery("");
+    setSearchResults([]);
+    setIsSearching(false);
+  };
 
   return (
     <div className="flex w-[80%] mb-4">
@@ -45,7 +57,15 @@ const SearchBar: React.FC = () => {
       >
         Search
       </button>
-      {loading && <p className="ml-4 text-teal-700">Searching...</p>}
+      {isSearching && (
+        <button
+          onClick={clearSearch}
+          className="ml-2 px-4 py-2 rounded-sm bg-gray-500 text-white hover:bg-gray-700"
+        >
+          Clear
+        </button>
+      )}
+      {isLoading && <p className="ml-4 text-teal-700">Searching...</p>}
     </div>
   );
 };

@@ -5,6 +5,7 @@ const serviceAccount = require("./firebase.json");
 import { parseBlock } from "./parseBlock";
 import { storeRaydiumTokenData, markRaydiumTokenAsProcessed } from "./database";
 import { Timestamp } from "firebase-admin/firestore";
+import { getTokenMetadata } from "./getTokenData2";
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
@@ -13,7 +14,7 @@ admin.initializeApp({
 const app = express();
 const PORT = process.env.PORT || 3000;
 const db = admin.firestore();
-
+db.settings({ ignoreUndefinedProperties: true });
 app.use(bodyParser.json());
 
 app.post("/", async (req, res) => {
@@ -98,6 +99,16 @@ app.post("/", async (req, res) => {
   // console.log("Creator's Wallet: ", creatorsWallet);
   // console.log("---------------------------------------------------");
 
+  let tokenMetadata = await getTokenMetadata(tokenAddress);
+  let tokenName = tokenMetadata.name;
+  let tokenSymbol = tokenMetadata.symbol;
+  let tokenImage = tokenMetadata.image;
+  let tokenSupply = tokenMetadata.supply;
+  let tokenDescription = tokenMetadata.description;
+  let mintAuthorityAddress = tokenMetadata.mintAuthorityAddress;
+  let freezeAuthorityAddress = tokenMetadata.freezeAuthorityAddress;
+  let decimals = tokenMetadata.decimals;
+
   let tokenData = {
     txSignature,
     block,
@@ -110,6 +121,14 @@ app.post("/", async (req, res) => {
     liquidityTokenAmount,
     liquidityTokenAddress,
     creatorsWallet,
+    tokenName,
+    tokenSymbol,
+    tokenImage,
+    tokenSupply,
+    tokenDescription,
+    mintAuthorityAddress,
+    freezeAuthorityAddress,
+    decimals,
   };
 
   let savedResult = await storeRaydiumTokenData(db, tokenData);
@@ -133,6 +152,7 @@ app.post("/", async (req, res) => {
         });
       }
     }
+    console.log("Token finished processing: ", tokenAddress);
   }
 });
 
