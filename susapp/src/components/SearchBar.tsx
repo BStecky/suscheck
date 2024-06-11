@@ -28,8 +28,16 @@ const SearchBar: React.FC = () => {
     console.log("Search results:", documentSnapshots.docs);
     const foundTokens = documentSnapshots.docs.map((doc) => ({
       id: doc.id,
-      tokenAddress: doc.data().tokenAddress,
-      sus: doc.data().sus,
+      tokenAddress: doc.data().tokenAddress || "N/A",
+      sus: doc.data().sus || false,
+      tokenName: doc.data().tokenName || "N/A",
+      tokenSymbol: doc.data().tokenSymbol || "N/A",
+      tokenImage: doc.data().tokenImage || "N/A",
+      tokenSupply: doc.data().tokenSupply || 0,
+      freezeAuthorityAddress: doc.data().freezeAuthorityAddress || "N/A",
+      mintAuthorityAddress: doc.data().mintAuthorityAddress || "N/A",
+      decimals: doc.data().decimals || 0,
+      description: doc.data().description || "No description available",
     }));
     setSearchResults(foundTokens);
     setIsSearching(true);
